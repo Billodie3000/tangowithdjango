@@ -20,7 +20,7 @@ def index(request):
     return render(request, 'rango/index.html', context_dict)
 
 def about(request):
-    return HttpResponse("Rango says here is the about page. <br/> <a href='/rango'>Home</a>")
+    return render(request, 'rango/about.html', {})
 
 @login_required
 def user_logout(request):
@@ -32,7 +32,7 @@ def user_logout(request):
 
 @login_required
 def restricted(request):
-    return HttpResponse("Since you're logged in, you can see this text!")
+    return render(request, 'rango/restricted.html', {})
 
 def user_login(request):
 
